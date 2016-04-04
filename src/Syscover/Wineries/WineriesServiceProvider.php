@@ -16,19 +16,19 @@ class WineriesServiceProvider extends ServiceProvider
 			require __DIR__ . '/../../routes.php';
 
 		// register views
-		$this->loadViewsFrom(__DIR__ . '/../../views', 'spas');
+		$this->loadViewsFrom(__DIR__ . '/../../views', 'wineries');
 
         // register translations
-        $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'spas');
+        $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'wineries');
 
         // register public files
         $this->publishes([
-            __DIR__ . '/../../../public' 					=> public_path('/packages/syscover/spas')
+            __DIR__ . '/../../../public' 					=> public_path('/packages/syscover/wineries')
         ]);
 
         // register config files
         $this->publishes([
-            __DIR__ . '/../../config/spas.php' 				=> config_path('spas.php')
+            __DIR__ . '/../../config/wineries.php' 			=> config_path('wineries.php')
         ]);
 
         // register migrations

@@ -2,6 +2,6 @@
 
 return [
     'package_name'                          => 'Wineries',
-    'spa'                                   => 'Spa|Spas',
-    'treatment'                             => 'Treatment|Treatments',
+    'winery'                                => 'Winery|Wineries',
+    'activity'                              => 'Activity|Activities',
 ];

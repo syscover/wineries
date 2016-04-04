@@ -12,58 +12,58 @@ class WineriesCreateTableWinery extends Migration {
 	 */
 	public function up()
 	{
-        if(! Schema::hasTable('014_180_spa'))
+        if(! Schema::hasTable('015_190_winery'))
         {
-            Schema::create('014_180_spa', function (Blueprint $table) {
+            Schema::create('015_190_winery', function (Blueprint $table) {
                 $table->engine = 'InnoDB';
-                $table->increments('id_180')->unsigned();
+                $table->increments('id_190')->unsigned();
 
                 // custom
-                $table->integer('custom_field_group_180')->unsigned()->nullable();
+                $table->integer('custom_field_group_190')->unsigned()->nullable();
 
                 // hotel related
-                $table->integer('hotel_id_180')->unsigned()->nullable();
+                $table->integer('hotel_id_190')->unsigned()->nullable();
 
                 // spa description
-                $table->string('name_180');
-                $table->string('slug_180')->nullable();
-                $table->string('web_180')->nullable();
-                $table->string('web_url_180')->nullable();
-                $table->string('contact_180')->nullable();
-                $table->string('email_180')->nullable();
-                $table->string('phone_180')->nullable();
-                $table->string('mobile_180')->nullable();
-                $table->string('fax_180')->nullable();
+                $table->string('name_190');
+                $table->string('slug_190')->nullable();
+                $table->string('web_190')->nullable();
+                $table->string('web_url_190')->nullable();
+                $table->string('contact_190')->nullable();
+                $table->string('email_190')->nullable();
+                $table->string('phone_190')->nullable();
+                $table->string('mobile_190')->nullable();
+                $table->string('fax_190')->nullable();
 
                 // access
-                $table->boolean('active_180');
+                $table->boolean('active_190');
 
                 // geolocation data
-                $table->string('country_180', 2);
-                $table->string('territorial_area_1_180', 6)->nullable();
-                $table->string('territorial_area_2_180', 10)->nullable();
-                $table->string('territorial_area_3_180', 10)->nullable();
-                $table->string('cp_180')->nullable();
-                $table->string('locality_180')->nullable();
-                $table->string('address_180')->nullable();
-                $table->string('latitude_180')->nullable();
-                $table->string('longitude_180')->nullable();
+                $table->string('country_190', 2);
+                $table->string('territorial_area_1_190', 6)->nullable();
+                $table->string('territorial_area_2_190', 10)->nullable();
+                $table->string('territorial_area_3_190', 10)->nullable();
+                $table->string('cp_190')->nullable();
+                $table->string('locality_190')->nullable();
+                $table->string('address_190')->nullable();
+                $table->string('latitude_190')->nullable();
+                $table->string('longitude_190')->nullable();
 
-                $table->string('data_lang_180')->nullable();
-                $table->text('data_180')->nullable();
+                $table->string('data_lang_190')->nullable();
+                $table->text('data_190')->nullable();
 
                 // INDEX
-                $table->index('slug_180', 'ix01_007_180_hotel');
+                $table->index('slug_190', 'ix01_007_190_hotel');
 
-                $table->foreign('country_180', 'fk01_007_180_hotel')->references('id_002')->on('001_002_country')
+                $table->foreign('country_190', 'fk01_014_191_winery_lang')->references('id_002')->on('001_002_country')
                     ->onDelete('restrict')->onUpdate('cascade');
-                $table->foreign('territorial_area_1_180', 'fk02_007_180_hotel')->references('id_003')->on('001_003_territorial_area_1')
+                $table->foreign('territorial_area_1_190', 'fk02_014_191_winery_lang')->references('id_003')->on('001_003_territorial_area_1')
                     ->onDelete('restrict')->onUpdate('cascade');
-                $table->foreign('territorial_area_2_180', 'fk03_007_180_hotel')->references('id_004')->on('001_004_territorial_area_2')
+                $table->foreign('territorial_area_2_190', 'fk03_014_191_winery_lang')->references('id_004')->on('001_004_territorial_area_2')
                     ->onDelete('restrict')->onUpdate('cascade');
-                $table->foreign('territorial_area_3_180', 'fk04_007_180_hotel')->references('id_005')->on('001_005_territorial_area_3')
+                $table->foreign('territorial_area_3_190', 'fk04_014_191_winery_lang')->references('id_005')->on('001_005_territorial_area_3')
                     ->onDelete('restrict')->onUpdate('cascade');
-                $table->foreign('custom_field_group_180', 'fk09_007_180_hotel')->references('id_025')->on('001_025_field_group')
+                $table->foreign('custom_field_group_190', 'fk05_014_191_winery_lang')->references('id_025')->on('001_025_field_group')
                     ->onDelete('restrict')->onUpdate('cascade');
             });
         }
@@ -76,9 +76,9 @@ class WineriesCreateTableWinery extends Migration {
 	 */
 	public function down()
 	{
-        if (Schema::hasTable('014_180_spa'))
+        if (Schema::hasTable('015_190_winery'))
         {
-            Schema::drop('014_180_spa');
+            Schema::drop('015_190_winery');
         }
 	}
 }

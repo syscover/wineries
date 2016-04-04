@@ -11,8 +11,8 @@ return [
     */
 
     //
-    'libraryFolder'         => '/packages/syscover/spas/storage/library',
-    'tmpFolder'             => '/packages/syscover/spas/storage/tmp',
-    'attachmentFolder'      => '/packages/syscover/spas/storage/attachment',
-    'iconsFolder'           => '/packages/syscover/spas/images/icons',
+    'libraryFolder'         => '/packages/syscover/wineries/storage/library',
+    'tmpFolder'             => '/packages/syscover/wineries/storage/tmp',
+    'attachmentFolder'      => '/packages/syscover/wineries/storage/attachment',
+    'iconsFolder'           => '/packages/syscover/wineries/images/icons',
 ];

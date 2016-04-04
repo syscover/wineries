@@ -1,5 +1,5 @@
 @extends('pulsar::layouts.tab', ['tabs' => [
-        ['id' => 'box_tab1', 'name' => trans_choice('spas::pulsar.spa', 1)],
+        ['id' => 'box_tab1', 'name' => trans_choice('wineries::pulsar.winery', 1)],
         ['id' => 'box_tab2', 'name' => trans_choice('pulsar::pulsar.description', 2)],
         ['id' => 'box_tab3', 'name' => trans_choice('pulsar::pulsar.attachment', 2)],
     ]])
@@ -29,17 +29,17 @@
 
     <script src="{{ asset('packages/syscover/pulsar/vendor/attachment/js/attachment-library.js') }}"></script>
     @include('pulsar::includes.js.attachment', [
-        'resource'          => 'spas-spa',
-        'routesConfigFile'  => 'spas',
-        'objectId'          => isset($object)? $object->id_180 : null])
+        'resource'          => 'wineries-winery',
+        'routesConfigFile'  => 'wineries',
+        'objectId'          => isset($object)? $object->id_190 : null])
     @include('pulsar::includes.js.check_slug', [
-        'route' => 'apiCheckSlugHotel',
+        'route' => 'apiCheckSlugWinery',
         'lang'  => null
     ])
 
     <script>
         $(document).ready(function() {
-            // to spa data
+            // to winery data
             $.getAddress({
                 id:                         '01',
                 type:                       'laravel',
@@ -51,10 +51,10 @@
                 useSeparatorHighlight:      true,
                 textSeparatorHighlight:     '------------------',
 
-                countryValue:               '{{ old('country', isset($object->country_180)? $object->country_180 : null) }}',
-                territorialArea1Value:      '{{ old('territorialArea1', isset($object->territorial_area_1_180)? $object->territorial_area_1_180 : null) }}',
-                territorialArea2Value:      '{{ old('territorialArea2', isset($object->territorial_area_2_180)? $object->territorial_area_2_180 : null) }}',
-                territorialArea3Value:      '{{ old('territorialArea3', isset($object->territorial_area_3_180)? $object->territorial_area_3_180 : null) }}'
+                countryValue:               '{{ old('country', isset($object->country_190)? $object->country_190 : null) }}',
+                territorialArea1Value:      '{{ old('territorialArea1', isset($object->territorial_area_1_190)? $object->territorial_area_1_190 : null) }}',
+                territorialArea2Value:      '{{ old('territorialArea2', isset($object->territorial_area_2_190)? $object->territorial_area_2_190 : null) }}',
+                territorialArea3Value:      '{{ old('territorialArea3', isset($object->territorial_area_3_190)? $object->territorial_area_3_190 : null) }}'
             })
 
             // to billing data
@@ -80,21 +80,21 @@
                 tA2Select:                  'billingTerritorialArea2',
                 tA3Select:                  'billingTerritorialArea3',
 
-                countryValue:               '{{ old('billingCountry', isset($object->billing_country_180)? $object->billing_country_180 : null) }}',
-                territorialArea1Value:      '{{ old('billingTerritorialArea1', isset($object->billing_territorial_area_1_180)? $object->billing_territorial_area_1_180 : null) }}',
-                territorialArea2Value:      '{{ old('billingTerritorialArea2', isset($object->billing_territorial_area_2_180)? $object->billing_territorial_area_2_180 : null) }}',
-                territorialArea3Value:      '{{ old('billingTerritorialArea3', isset($object->billing_territorial_area_3_180)? $object->billing_territorial_area_3_180 : null) }}'
+                countryValue:               '{{ old('billingCountry', isset($object->billing_country_190)? $object->billing_country_190 : null) }}',
+                territorialArea1Value:      '{{ old('billingTerritorialArea1', isset($object->billing_territorial_area_1_190)? $object->billing_territorial_area_1_190 : null) }}',
+                territorialArea2Value:      '{{ old('billingTerritorialArea2', isset($object->billing_territorial_area_2_190)? $object->billing_territorial_area_2_190 : null) }}',
+                territorialArea3Value:      '{{ old('billingTerritorialArea3', isset($object->billing_territorial_area_3_190)? $object->billing_territorial_area_3_190 : null) }}'
             })
 
             $.mapPoint({
                 id:                 '01',
                 urlPlugin:          '/packages/syscover/pulsar/vendor',
-                @if(!empty($object->latitude_180))lat: {{ $object->latitude_180 }},@endif
-                @if(!empty($object->longitude_180))lng: {{ $object->longitude_180 }},@endif
+                @if(!empty($object->latitude_190))lat: {{ $object->latitude_190 }},@endif
+                @if(!empty($object->longitude_190))lng: {{ $object->longitude_190 }},@endif
                 zoom:               12,
                 showMarker:         true,
                 customIcon:         {
-                    src: '/packages/syscover/spas/images/location.svg',
+                    src: '/packages/syscover/wineries/images/location.svg',
                     scaledWidth: 49,
                     scaledHeight: 71,
                     anchorX: 25,
@@ -153,7 +153,7 @@
     </script>
 
     @include('pulsar::includes.js.custom_fields', [
-        'resource' => 'spas-spa'
+        'resource' => 'wineries-winery'
     ])
     @include('pulsar::includes.js.delete_translation_record')
 @stop
@@ -166,14 +166,14 @@
 @stop
 
 @section('box_tab1')
-    <!-- spas::spa.form -->
+    <!-- wineries::winery.form -->
     <div class="row">
         <div class="col-md-6">
             @include('pulsar::includes.html.form_text_group', [
                 'label' => 'ID',
                 'fieldSize' => 4,
                 'name' => 'id',
-                'value' => old('id', isset($object->id_180)? $object->id_180 : null),
+                'value' => old('id', isset($object->id_190)? $object->id_190 : null),
                 'readOnly' => true
             ])
         </div>
@@ -194,7 +194,7 @@
         'fieldSize' => 5,
         'label' => trans_choice('hotels::pulsar.hotel', 1),
         'name' => 'hotel',
-        'value' => old('hotel', isset($object->hotel_id_180)? $object->hotel_id_180 : null),
+        'value' => old('hotel', isset($object->hotel_id_190)? $object->hotel_id_190 : null),
         'objects' => $hotels,
         'idSelect' => 'id_170',
         'nameSelect' => 'name_170',
@@ -211,7 +211,7 @@
         'fieldSize' => 11,
         'label' => trans('pulsar::pulsar.name'),
         'name' => 'name',
-        'value' => old('name', isset($object->name_180)? $object->name_180 : null),
+        'value' => old('name', isset($object->name_190)? $object->name_190 : null),
         'maxLength' => '100',
         'rangeLength' => '2,100',
         'required' => true,
@@ -222,7 +222,7 @@
         'fieldSize' => 11,
         'label' => trans('pulsar::pulsar.slug'),
         'name' => 'slug',
-        'value' => old('slug', isset($object->slug_180)? $object->slug_180 : null),
+        'value' => old('slug', isset($object->slug_190)? $object->slug_190 : null),
         'maxLength' => '255',
         'rangeLength' => '2,255',
         'required' => true,
@@ -233,7 +233,7 @@
             @include('pulsar::includes.html.form_text_group', [
                 'label' => trans('pulsar::pulsar.web'),
                 'name' => 'web',
-                'value' => old('web', isset($object->web_180)? $object->web_180 : null),
+                'value' => old('web', isset($object->web_190)? $object->web_190 : null),
                 'maxLength' => '100',
                 'rangeLength' => '2,100',
                 'placeholder' => 'mydomain.com',
@@ -242,7 +242,7 @@
             @include('pulsar::includes.html.form_text_group', [
                 'label' => trans_choice('pulsar::pulsar.contact', 1),
                 'name' => 'contact',
-                'value' => old('contact', isset($object->contact_180)? $object->contact_180 : null),
+                'value' => old('contact', isset($object->contact_190)? $object->contact_190 : null),
                 'maxLength' => '100',
                 'rangeLength' => '2,100',
                 'readOnly' => $action == 'update' || $action == 'store'? false : true
@@ -250,7 +250,7 @@
             @include('pulsar::includes.html.form_text_group', [
                 'label' => trans_choice('pulsar::pulsar.phone', 1),
                 'name' => 'phone',
-                'value' => old('phone', isset($object->phone_180)? $object->phone_180 : null),
+                'value' => old('phone', isset($object->phone_190)? $object->phone_190 : null),
                 'maxLength' => '50',
                 'rangeLength' => '2,50',
                 'readOnly' => $action == 'update' || $action == 'store'? false : true
@@ -258,7 +258,7 @@
             @include('pulsar::includes.html.form_text_group', [
                 'label' => trans('pulsar::pulsar.fax'),
                 'name' => 'fax',
-                'value' => old('fax', isset($object->fax_180)? $object->fax_180 : null),
+                'value' => old('fax', isset($object->fax_190)? $object->fax_190 : null),
                 'maxLength' => '50',
                 'rangeLength' => '2,50',
                 'readOnly' => $action == 'update' || $action == 'store'? false : true
@@ -268,7 +268,7 @@
             @include('pulsar::includes.html.form_text_group', [
                 'label' => trans('pulsar::pulsar.web_url'),
                 'name' => 'webUrl',
-                'value' => old('webUrl', isset($object->web_url_180)? $object->web_url_180 : null),
+                'value' => old('webUrl', isset($object->web_url_190)? $object->web_url_190 : null),
                 'maxLength' => '100',
                 'rangeLength' => '2,100',
                 'placeholder' => 'http://www.mydomain.com',
@@ -277,7 +277,7 @@
             @include('pulsar::includes.html.form_text_group', [
                 'label' => trans('pulsar::pulsar.email'),
                 'name' => 'email',
-                'value' => old('email', isset($object->email_180)? $object->email_180 : null),
+                'value' => old('email', isset($object->email_190)? $object->email_190 : null),
                 'maxLength' => '50',
                 'rangeLength' => '2,50',
                 'type' => 'email',
@@ -287,7 +287,7 @@
             @include('pulsar::includes.html.form_text_group', [
                 'label' => trans('pulsar::pulsar.mobile'),
                 'name' => 'mobile',
-                'value' => old('mobile', isset($object->mobile_180)? $object->mobile_180 : null),
+                'value' => old('mobile', isset($object->mobile_190)? $object->mobile_190 : null),
                 'maxLength' => '50',
                 'rangeLength' => '2,50',
                 'readOnly' => $action == 'update' || $action == 'store'? false : true
@@ -296,7 +296,7 @@
                 'fieldSize' => 7,
                 'label' => trans_choice('pulsar::pulsar.field_group', 1),
                 'name' => 'customFieldGroup',
-                'value' => old('customFieldGroup', isset($object->custom_field_group_180)? $object->custom_field_group_180 : null),
+                'value' => old('customFieldGroup', isset($object->custom_field_group_190)? $object->custom_field_group_190 : null),
                 'objects' => $customFieldGroups,
                 'idSelect' => 'id_025',
                 'nameSelect' => 'name_025'
@@ -314,7 +314,7 @@
                 'label' => trans('pulsar::pulsar.active'),
                 'name' => 'active',
                 'value' => 1,
-                'checked' => old('active', isset($object)? $object->active_180 : null),
+                'checked' => old('active', isset($object)? $object->active_190 : null),
                 'disabled' => $action == 'update' || $action == 'store'? false : true
             ])
         </div>
@@ -331,7 +331,7 @@
         'fieldSize' => 11,
         'label' => trans_choice('pulsar::pulsar.address', 1),
         'name' => 'address',
-        'value' => old('address', isset($object->address_180)? $object->address_180 : null),
+        'value' => old('address', isset($object->address_190)? $object->address_190 : null),
         'maxLength' => '150',
         'rangeLength' => '2,150',
         'readOnly' => $action == 'update' || $action == 'store'? false : true
@@ -389,7 +389,7 @@
             @include('pulsar::includes.html.form_text_group', [
                 'label' => trans('pulsar::pulsar.cp'),
                 'name' => 'cp',
-                'value' => old('cp', isset($object->cp_180)? $object->cp_180 : null),
+                'value' => old('cp', isset($object->cp_190)? $object->cp_190 : null),
                 'maxLength' => '10',
                 'rangeLength' => '2,10',
                 'fieldSize' => 4,
@@ -398,7 +398,7 @@
             @include('pulsar::includes.html.form_text_group', [
                 'label' => trans('pulsar::pulsar.locality'),
                 'name' => 'locality',
-                'value' => old('locality', isset($object->locality_180)? $object->locality_180 : null),
+                'value' => old('locality', isset($object->locality_190)? $object->locality_190 : null),
                 'maxLength' => '100',
                 'rangeLength' => '2,100',
                 'fieldSize' => 6,
@@ -407,7 +407,7 @@
             @include('pulsar::includes.html.form_text_group', [
                 'label' => trans('pulsar::pulsar.latitude'),
                 'name' => 'latitude',
-                'value' => old('latitude', isset($object->latitude_180)? $object->latitude_180 : null),
+                'value' => old('latitude', isset($object->latitude_190)? $object->latitude_190 : null),
                 'maxLength' => '100',
                 'rangeLength' => '2,100',
                 'readOnly' => $action == 'update' || $action == 'store'? false : true
@@ -415,7 +415,7 @@
             @include('pulsar::includes.html.form_text_group', [
                 'label' => trans('pulsar::pulsar.longitude'),
                 'name' => 'longitude',
-                'value' => old('longitude', isset($object->longitude_180)? $object->longitude_180 : null),
+                'value' => old('longitude', isset($object->longitude_190)? $object->longitude_190 : null),
                 'maxLength' => '100',
                 'rangeLength' => '2,100',
                 'readOnly' => $action == 'update' || $action == 'store'? false : true
@@ -432,33 +432,33 @@
         'containerId' => 'headerCustomFields'
     ])
     <div id="wrapperCustomFields"></div>
-    <!-- ./spas::spa.form -->
+    <!-- ./wineries::winery.form -->
 @stop
 
 @section('box_tab2')
     @include('pulsar::includes.html.form_text_group', [
         'label' => trans('pulsar::pulsar.description_title'),
         'name' => 'descriptionTitle',
-        'value' => old('descriptionTitle', isset($object->description_title_181)? $object->description_title_181 : null),
+        'value' => old('descriptionTitle', isset($object->description_title_191)? $object->description_title_191 : null),
         'maxLength' => '100',
         'rangeLength' => '2,100'
     ])
     @include('pulsar::includes.html.form_wysiwyg_group', [
         'label' => trans_choice('pulsar::pulsar.description', 1),
         'name' => 'description',
-        'value' => old('description', isset($object->description_181)? $object->description_181 : null)
+        'value' => old('description', isset($object->description_191)? $object->description_191 : null)
     ])
     @include('pulsar::includes.html.form_wysiwyg_group', [
-        'label' => trans_choice('spas::pulsar.treatment', 2),
-        'name' => 'treatments',
-        'value' => old('treatments', isset($object->treatments_181)? $object->treatments_181 : null)
+        'label' => trans_choice('wineries::pulsar.activity', 2),
+        'name' => 'activity',
+        'value' => old('activity', isset($object->activity_191)? $object->activity_191 : null)
     ])
 @stop
 
 @section('box_tab3')
     @include('pulsar::includes.html.attachment', [
         'action'            => 'create',
-        'routesConfigFile'  => 'spas'])
+        'routesConfigFile'  => 'wineries'])
 @stop
 
 @section('endBody')

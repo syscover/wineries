@@ -2,7 +2,7 @@
 
 @section('head')
     @parent
-    <!-- spas::spa.index -->
+    <!-- wineries::winery.index -->
     <script>
         $(document).ready(function() {
             if ($.fn.dataTable)
@@ -21,20 +21,20 @@
             }
         });
     </script>
-    <!-- ./spas::spa.index -->
+    <!-- ./wineries::winery.index -->
 @stop
 
 @section('tHead')
-    <!-- spas::spa.index -->
+    <!-- wineries::winery.index -->
     <tr>
         <th data-hide="phone,tablet">ID.</th>
         <th data-hide="phone,tablet">{{ trans_choice('pulsar::pulsar.language', 1) }}</th>
         <th data-hide="phone,tablet">{{ trans_choice('pulsar::pulsar.country', 1) }}</th>
         <th data-hide="phone,tablet">{{ trans_choice('pulsar::pulsar.territorial_area', 1) }}</th>
-        <th data-class="expand">{{ trans_choice('spas::pulsar.spa', 1) }}</th>
+        <th data-class="expand">{{ trans_choice('wineries::pulsar.winery', 1) }}</th>
         <th>{{ trans_choice('pulsar::pulsar.active', 1) }}</th>
         <th class="checkbox-column"><input type="checkbox" class="uniform"></th>
         <th>{{ trans_choice('pulsar::pulsar.action', 2) }}</th>
     </tr>
-    <!-- ./spas::spa.index -->
+    <!-- ./wineries::winery.index -->
 @stop
