@@ -1,4 +1,4 @@
-<?php namespace Syscover\Spas;
+<?php namespace Syscover\Wineries;
 
 use Illuminate\Support\ServiceProvider;
 
