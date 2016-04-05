@@ -6,7 +6,6 @@
 ```
 "syscover/wineries": "dev-master"
 ```
-
 and execute on console:
 ```
 composer update
