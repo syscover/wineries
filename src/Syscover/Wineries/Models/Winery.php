@@ -20,7 +20,7 @@ class Winery extends Model {
     use TraitModel;
     use Eloquence, Mappable;
 
-	protected $table        = '014_190_winery';
+	protected $table        = '015_190_winery';
     protected $primaryKey   = 'id_190';
     protected $suffix       = '190';
     public $timestamps      = false;
@@ -34,7 +34,7 @@ class Winery extends Model {
     ];
     private static $rules   = [
         'name'      => 'required|between:2,100',
-        'email'     => 'required|between:2,50|email|unique:014_190_winery,email_190',
+        'email'     => 'required|between:2,50|email|unique:015_190_winery,email_190',
     ];
 
     public static function validate($data, $specialRules = [])
@@ -50,14 +50,14 @@ class Winery extends Model {
      */
     public function scopeBuilder($query)
     {
-        return $query->join('014_191_winery_lang', '014_190_winery.id_190', '=', '014_191_winery_lang.id_191')
-            ->join('001_001_lang', '014_191_winery_lang.lang_191', '=', '001_001_lang.id_001')
+        return $query->join('015_191_winery_lang', '015_190_winery.id_190', '=', '015_191_winery_lang.id_191')
+            ->join('001_001_lang', '015_191_winery_lang.lang_191', '=', '001_001_lang.id_001')
             ->join('001_002_country', function ($join) {
-                $join->on('014_190_winery.country_190', '=', '001_002_country.id_002')
+                $join->on('015_190_winery.country_190', '=', '001_002_country.id_002')
                     ->on('001_002_country.lang_002', '=', '001_001_lang.id_001');
             })
-            ->leftJoin('001_003_territorial_area_1', '014_190_winery.territorial_area_1_190', '=', '001_003_territorial_area_1.id_003')
-            ->leftJoin('001_004_territorial_area_2', '014_190_winery.territorial_area_2_190', '=', '001_004_territorial_area_2.id_004');
+            ->leftJoin('001_003_territorial_area_1', '015_190_winery.territorial_area_1_190', '=', '001_003_territorial_area_1.id_003')
+            ->leftJoin('001_004_territorial_area_2', '015_190_winery.territorial_area_2_190', '=', '001_004_territorial_area_2.id_004');
     }
 
     public function getLang()
@@ -76,8 +76,8 @@ class Winery extends Model {
 
     public static function getTranslationRecord($parameters)
     {
-        return Winery::join('014_191_winery_lang', '014_190_winery.id_190', '=', '014_191_winery_lang.id_191')
-            ->join('001_001_lang', '014_191_winery_lang.lang_191', '=', '001_001_lang.id_001')
+        return Winery::join('015_191_winery_lang', '015_190_winery.id_190', '=', '015_191_winery_lang.id_191')
+            ->join('001_001_lang', '015_191_winery_lang.lang_191', '=', '001_001_lang.id_001')
             ->where('id_190', $parameters['id'])->where('lang_191', $parameters['lang'])
             ->first();
     }

@@ -12,9 +12,9 @@ class WineriesCreateTableWineryLang extends Migration {
 	 */
 	public function up()
 	{
-		if(! Schema::hasTable('014_191_winery_lang'))
+		if(! Schema::hasTable('015_191_winery_lang'))
 		{
-			Schema::create('014_191_winery_lang', function (Blueprint $table) {
+			Schema::create('015_191_winery_lang', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 
 				$table->integer('id_191')->unsigned();
@@ -24,11 +24,11 @@ class WineriesCreateTableWineryLang extends Migration {
 				$table->text('description_191')->nullable();
 				$table->text('activity_191')->nullable();
 
-				$table->primary(['id_191', 'lang_191'], 'pk01_014_191_winery_lang');
+				$table->primary(['id_191', 'lang_191'], 'pk01_015_191_winery_lang');
 
-				$table->foreign('id_191', 'fk01_014_191_winery_lang')->references('id_190')->on('015_190_winery')
+				$table->foreign('id_191', 'fk01_015_191_winery_lang')->references('id_190')->on('015_190_winery')
 					->onDelete('cascade')->onUpdate('cascade');
-				$table->foreign('lang_191', 'fk02_014_191_winery_lang')->references('id_001')->on('001_001_lang')
+				$table->foreign('lang_191', 'fk02_015_191_winery_lang')->references('id_001')->on('001_001_lang')
 					->onDelete('restrict')->onUpdate('cascade');
 
 			});
@@ -42,9 +42,9 @@ class WineriesCreateTableWineryLang extends Migration {
 	 */
 	public function down()
 	{
-		if(Schema::hasTable('014_191_winery_lang'))
+		if(Schema::hasTable('015_191_winery_lang'))
 		{
-			Schema::drop('014_191_winery_lang');
+			Schema::drop('015_191_winery_lang');
 		}
 	}
 }

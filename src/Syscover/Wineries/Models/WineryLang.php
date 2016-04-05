@@ -20,7 +20,7 @@ class WineryLang extends Model {
     use TraitModel;
     use Eloquence, Mappable;
 
-	protected $table        = '014_191_winery_lang';
+	protected $table        = '015_191_winery_lang';
     protected $primaryKey   = 'id_191';
     protected $suffix       = '191';
     public $timestamps      = false;

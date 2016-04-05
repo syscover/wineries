@@ -20,15 +20,15 @@ class WineryController extends Controller {
 
     use TraitController;
 
-    protected $routeSuffix  = 'Winery';
-    protected $folder       = 'Winery';
-    protected $package      = 'Wineries';
+    protected $routeSuffix  = 'winery';
+    protected $folder       = 'winery';
+    protected $package      = 'wineries';
     protected $aColumns     = ['id_190', 'name_001', 'name_002', 'name_003', 'name_190', ['data' => 'active_190', 'type' => 'active']];
     protected $nameM        = 'name_190';
     protected $model        = Winery::class;
     protected $langModel    = WineryLang::class;
-    protected $icon         = 'fa fa-tint';
-    protected $objectTrans  = 'Winery';
+    protected $icon         = 'fa fa-glass';
+    protected $objectTrans  = 'winery';
 
     public function customIndex($parameters)
     {
