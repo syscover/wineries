@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'package_name'                          => 'Spas',
+    'package_name'                          => 'Bodegas',
     'winery'                                => 'Bodega|Bodegas',
     'activity'                              => 'Actividad|Actividades',
 ];
