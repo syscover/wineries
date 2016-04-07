@@ -432,7 +432,7 @@
         'containerId' => 'headerCustomFields'
     ])
     <div id="wrapperCustomFields"></div>
-    <!-- ./wineries::winery.form -->
+    <!-- /.wineries::winery.form -->
 @stop
 
 @section('box_tab2')
