@@ -1,10 +1,9 @@
 <?php namespace Syscover\Wineries\Models;
 
-use Syscover\Pulsar\Models\Model;
-use Illuminate\Support\Facades\Validator;
-use Syscover\Pulsar\Traits\TraitModel;
+use Syscover\Pulsar\Core\Model;
 use Sofa\Eloquence\Eloquence;
 use Sofa\Eloquence\Mappable;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Class WineryLang
@@ -15,9 +14,8 @@ use Sofa\Eloquence\Mappable;
  * @package     Syscover\Spas\Models
  */
 
-class WineryLang extends Model {
-
-    use TraitModel;
+class WineryLang extends Model
+{
     use Eloquence, Mappable;
 
 	protected $table        = '015_191_winery_lang';

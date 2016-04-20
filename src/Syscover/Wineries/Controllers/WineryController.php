@@ -1,13 +1,12 @@
 <?php namespace Syscover\Wineries\Controllers;
 
+use Syscover\Pulsar\Core\Controller;
 use Illuminate\Support\Facades\Hash;
 use Syscover\Hotels\Models\Hotel;
-use Syscover\Pulsar\Controllers\Controller;
 use Syscover\Pulsar\Libraries\AttachmentLibrary;
 use Syscover\Pulsar\Libraries\CustomFieldResultLibrary;
 use Syscover\Pulsar\Models\AttachmentFamily;
 use Syscover\Pulsar\Models\CustomFieldGroup;
-use Syscover\Pulsar\Traits\TraitController;
 use Syscover\Wineries\Models\Winery;
 use Syscover\Wineries\Models\WineryLang;
 
@@ -16,10 +15,8 @@ use Syscover\Wineries\Models\WineryLang;
  * @package Syscover\Wineries\Controllers
  */
 
-class WineryController extends Controller {
-
-    use TraitController;
-
+class WineryController extends Controller
+{
     protected $routeSuffix  = 'winery';
     protected $folder       = 'winery';
     protected $package      = 'wineries';

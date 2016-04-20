@@ -1,10 +1,9 @@
 <?php namespace Syscover\Wineries\Models;
 
-use Syscover\Pulsar\Models\Model;
-use Illuminate\Support\Facades\Validator;
-use Syscover\Pulsar\Traits\TraitModel;
+use Syscover\Pulsar\Core\Model;
 use Sofa\Eloquence\Eloquence;
 use Sofa\Eloquence\Mappable;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Class Winery
@@ -15,9 +14,8 @@ use Sofa\Eloquence\Mappable;
  * @package     Syscover\Wineries\Models
  */
 
-class Winery extends Model {
-
-    use TraitModel;
+class Winery extends Model
+{
     use Eloquence, Mappable;
 
 	protected $table        = '015_190_winery';
