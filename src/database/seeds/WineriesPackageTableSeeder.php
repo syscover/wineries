@@ -8,7 +8,7 @@ class WineriesPackageTableSeeder extends Seeder
     public function run()
     {
         Package::insert([
-            ['id_012' => '15', 'name_012' => 'Wineries Package', 'folder_012' => 'wineries', 'sorting_012' => 15, 'active_012' => '0']
+            ['id_012' => '15', 'name_012' => 'Wineries Package', 'folder_012' => 'wineries', 'sorting_012' => 15, 'active_012' => false]
         ]);
     }
 }
