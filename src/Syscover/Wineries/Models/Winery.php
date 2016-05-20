@@ -25,7 +25,7 @@ class Winery extends Model
     protected $fillable     = ['id_190', 'custom_field_group_190', 'hotel_id_190', 'name_190', 'slug_190', 'web_190', 'web_url_190', 'contact_190', 'email_190', 'phone_190', 'mobile_190', 'fax_190', 'active_190', 'country_190', 'territorial_area_1_190', 'territorial_area_2_190', 'territorial_area_3_190', 'cp_190', 'locality_190', 'address_190', 'latitude_190', 'longitude_190', 'data_lang_190', 'data_190'];
     protected $maps         = [];
     protected $relationMaps = [
-        'hotel'         => \Syscover\Hotels\Models\Hotel::class,
+        'hotel'         => \Syscover\Hotels\Models\Hotel::class, // if this winery belonging to a hotel
         'lang'          => \Syscover\Pulsar\Models\Lang::class,
         'winery_lang'   => \Syscover\Wineries\Models\WineryLang::class,
         'country'       => \Syscover\Pulsar\Models\Country::class
