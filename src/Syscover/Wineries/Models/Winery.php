@@ -52,7 +52,7 @@ class Winery extends Model
             ->join('001_001_lang', '015_191_winery_lang.lang_191', '=', '001_001_lang.id_001')
             ->join('001_002_country', function ($join) {
                 $join->on('015_190_winery.country_190', '=', '001_002_country.id_002')
-                    ->on('001_002_country.lang_002', '=', '001_001_lang.id_001');
+                    ->on('001_002_country.lang_id_002', '=', '001_001_lang.id_001');
             })
             ->leftJoin('001_003_territorial_area_1', '015_190_winery.territorial_area_1_190', '=', '001_003_territorial_area_1.id_003')
             ->leftJoin('001_004_territorial_area_2', '015_190_winery.territorial_area_2_190', '=', '001_004_territorial_area_2.id_004');

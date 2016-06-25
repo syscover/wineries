@@ -8,8 +8,8 @@ class WineriesResourceTableSeeder extends Seeder {
     public function run()
     {
         Resource::insert([
-            ['id_007' => 'wineries',            'name_007' => 'Wineries Package',   'package_007' => '15'],
-            ['id_007' => 'wineries-winery',     'name_007' => 'Winery',             'package_007' => '15'],
+            ['id_007' => 'wineries',            'name_007' => 'Wineries Package',   'package_id_007' => '15'],
+            ['id_007' => 'wineries-winery',     'name_007' => 'Winery',             'package_id_007' => '15'],
         ]);
     }
 }
