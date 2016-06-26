@@ -92,10 +92,10 @@ class WineryController extends Controller
                 'mobile_190'                                    => $this->request->input('mobile'),
                 'fax_190'                                       => $this->request->input('fax'),
                 'active_190'                                    => $this->request->has('active'),
-                'country_190'                                   => $this->request->input('country'),
-                'territorial_area_1_190'                        => $this->request->has('territorialArea1') ? $this->request->input('territorialArea1') : null,
-                'territorial_area_2_190'                        => $this->request->has('territorialArea2') ? $this->request->input('territorialArea2') : null,
-                'territorial_area_3_190'                        => $this->request->has('territorialArea3') ? $this->request->input('territorialArea3') : null,
+                'country_id_190'                                => $this->request->input('country'),
+                'territorial_area_1_id_190'                     => $this->request->has('territorialArea1') ? $this->request->input('territorialArea1') : null,
+                'territorial_area_2_id_190'                     => $this->request->has('territorialArea2') ? $this->request->input('territorialArea2') : null,
+                'territorial_area_3_id_190'                     => $this->request->has('territorialArea3') ? $this->request->input('territorialArea3') : null,
                 'cp_190'                                        => $this->request->input('cp'),
                 'locality_190'                                  => $this->request->input('locality'),
                 'address_190'                                   => $this->request->input('address'),
@@ -119,7 +119,7 @@ class WineryController extends Controller
 
         WineryLang::create([
             'id_191'                        => $id,
-            'lang_191'                      => $this->request->input('lang'),
+            'lang_id_191'                   => $this->request->input('lang'),
             'description_title_191'         => $this->request->has('descriptionTitle')? $this->request->input('descriptionTitle') : null,
             'description_191'               => $this->request->has('description')? $this->request->input('description') : null,
             'activity_191'                  => $this->request->has('activity')? $this->request->input('activity') : null,
@@ -173,10 +173,10 @@ class WineryController extends Controller
             'mobile_190'                                    => $this->request->input('mobile'),
             'fax_190'                                       => $this->request->input('fax'),
             'active_190'                                    => $this->request->has('active'),
-            'country_190'                                   => $this->request->input('country'),
-            'territorial_area_1_190'                        => $this->request->has('territorialArea1') ? $this->request->input('territorialArea1') : null,
-            'territorial_area_2_190'                        => $this->request->has('territorialArea2') ? $this->request->input('territorialArea2') : null,
-            'territorial_area_3_190'                        => $this->request->has('territorialArea3') ? $this->request->input('territorialArea3') : null,
+            'country_id_190'                                => $this->request->input('country'),
+            'territorial_area_1_id_190'                     => $this->request->has('territorialArea1') ? $this->request->input('territorialArea1') : null,
+            'territorial_area_2_id_190'                     => $this->request->has('territorialArea2') ? $this->request->input('territorialArea2') : null,
+            'territorial_area_3_id_190'                     => $this->request->has('territorialArea3') ? $this->request->input('territorialArea3') : null,
             'cp_190'                                        => $this->request->input('cp'),
             'locality_190'                                  => $this->request->input('locality'),
             'address_190'                                   => $this->request->input('address'),
@@ -192,7 +192,7 @@ class WineryController extends Controller
         // haría falta el objedo actualizado
         //$winery = Winery::find($parameters['id']);
 
-        WineryLang::where('id_191', $parameters['id'])->where('lang_191', $this->request->input('lang'))->update([
+        WineryLang::where('id_191', $parameters['id'])->where('lang_id_191', $this->request->input('lang'))->update([
             'description_title_191'         => $this->request->has('descriptionTitle')? $this->request->input('descriptionTitle') : null,
             'description_191'               => $this->request->has('description')? $this->request->input('description') : null,
             'activity_191'                  => $this->request->has('activity')? $this->request->input('activity') : null,
@@ -215,7 +215,7 @@ class WineryController extends Controller
     public function deleteCustomTranslationRecord($object)
     {
         // delete all attachments from lang object
-        AttachmentLibrary::deleteAttachment($this->package, 'wineries-winery', $object->id_191, $object->lang_191);
+        AttachmentLibrary::deleteAttachment($this->package, 'wineries-winery', $object->id_191, $object->lang_id_191);
     }
 
     public function deleteCustomRecordsSelect($ids)
