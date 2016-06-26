@@ -45,7 +45,7 @@ class WineryController extends Controller
 
     public function createCustomRecord($parameters)
     {
-        $parameters['attachmentFamilies']   = AttachmentFamily::getAttachmentFamilies(['resource_015' => 'wineries-winery']);
+        $parameters['attachmentFamilies']   = AttachmentFamily::getAttachmentFamilies(['resource_id_015' => 'wineries-winery']);
         $parameters['customFieldGroups']    = CustomFieldGroup::where('resource_025', 'wineries-winery')->get();
         $parameters['attachmentsInput']     = json_encode([]);
         $parameters['hotels']               = Hotel::builder()->where('active_170', true)->get();
@@ -140,7 +140,7 @@ class WineryController extends Controller
         $attachments = AttachmentLibrary::getRecords('wineries', 'wineries-winery', $parameters['object']->id_190, $parameters['lang']->id_001);
 
         // merge parameters and attachments array
-        $parameters['attachmentFamilies']   = AttachmentFamily::getAttachmentFamilies(['resource_015' => 'wineries-winery']);
+        $parameters['attachmentFamilies']   = AttachmentFamily::getAttachmentFamilies(['resource_id_015' => 'wineries-winery']);
         $parameters['customFieldGroups']    = CustomFieldGroup::builder()->where('resource_025', 'wineries-winery')->get();
         $parameters['hotels']               = Hotel::builder()->where('active_170', true)->get();
 
