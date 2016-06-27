@@ -52,16 +52,31 @@ class WineriesCreateTableWinery extends Migration {
                 $table->string('data_lang_190')->nullable();
                 $table->text('data_190')->nullable();
                 
-                $table->foreign('country_id_190', 'fk01_015_190_winery')->references('id_002')->on('001_002_country')
-                    ->onDelete('restrict')->onUpdate('cascade');
-                $table->foreign('territorial_area_1_id_190', 'fk02_015_190_winery')->references('id_003')->on('001_003_territorial_area_1')
-                    ->onDelete('restrict')->onUpdate('cascade');
-                $table->foreign('territorial_area_2_id_190', 'fk03_015_190_winery')->references('id_004')->on('001_004_territorial_area_2')
-                    ->onDelete('restrict')->onUpdate('cascade');
-                $table->foreign('territorial_area_3_id_190', 'fk04_015_190_winery')->references('id_005')->on('001_005_territorial_area_3')
-                    ->onDelete('restrict')->onUpdate('cascade');
-                $table->foreign('custom_field_group_190', 'fk05_015_190_winery')->references('id_025')->on('001_025_field_group')
-                    ->onDelete('restrict')->onUpdate('cascade');
+                $table->foreign('country_id_190', 'fk01_015_190_winery')
+                    ->references('id_002')
+                    ->on('001_002_country')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('territorial_area_1_id_190', 'fk02_015_190_winery')
+                    ->references('id_003')
+                    ->on('001_003_territorial_area_1')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('territorial_area_2_id_190', 'fk03_015_190_winery')
+                    ->references('id_004')
+                    ->on('001_004_territorial_area_2')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('territorial_area_3_id_190', 'fk04_015_190_winery')
+                    ->references('id_005')
+                    ->on('001_005_territorial_area_3')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('custom_field_group_190', 'fk05_015_190_winery')
+                    ->references('id_025')
+                    ->on('001_025_field_group')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
                 
                 $table->index('slug_190', 'ix01_015_190_winery');
             });
