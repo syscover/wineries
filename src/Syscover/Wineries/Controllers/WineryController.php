@@ -20,7 +20,7 @@ class WineryController extends Controller
     protected $routeSuffix  = 'winery';
     protected $folder       = 'winery';
     protected $package      = 'wineries';
-    protected $indexColumns     = ['id_190', 'name_001', 'name_002', 'name_003', 'name_190', ['data' => 'active_190', 'type' => 'active']];
+    protected $indexColumns = ['id_190', 'name_001', 'name_002', 'name_003', 'name_190', ['data' => 'active_190', 'type' => 'active']];
     protected $nameM        = 'name_190';
     protected $model        = Winery::class;
     protected $langModel    = WineryLang::class;
