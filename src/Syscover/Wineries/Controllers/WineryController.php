@@ -29,9 +29,9 @@ class WineryController extends Controller
 
     public function customIndex($parameters)
     {
-        $parameters['urlParameters']['lang']    = session('baseLang')->id_001;
+        $parameters['urlParameters']['lang'] = base_lang()->id_001;
         // init record on tap 4
-        $parameters['urlParameters']['tab']     = 2;
+        $parameters['urlParameters']['tab']  = 2;
 
         return $parameters;
     }
@@ -53,7 +53,7 @@ class WineryController extends Controller
         if(isset($parameters['id']))
         {
             // get attachments from base lang
-            $attachments = AttachmentLibrary::getRecords($this->package, 'wineries-winery', $parameters['id'], session('baseLang')->id_001, true);
+            $attachments = AttachmentLibrary::getRecords($this->package, 'wineries-winery', $parameters['id'], base_lang()->id_001, true);
 
             // merge parameters and attachments array
             $parameters  = array_merge($parameters, $attachments);
