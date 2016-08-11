@@ -1,9 +1,7 @@
 {
     "name": "syscover/wineries",
-    "version": "5.2",
     "description": "Wineries package",
     "keywords": ["syscover","pulsar","laravel","wineries"],
-    "license": "MIT",
     "authors": [
         {
             "name": "SYSCOVER SL",
