@@ -17,5 +17,5 @@
             "Syscover\\Wineries\\": "src/Syscover/Wineries"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
