@@ -1,4 +1,4 @@
-# Wineries for Laravel 5
+# Wineries for Laravel 5.2
 
 [![Total Downloads](https://poser.pugx.org/syscover/wineries/downloads)](https://packagist.org/packages/syscover/wineries)
 
