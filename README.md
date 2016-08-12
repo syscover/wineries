@@ -1,14 +1,16 @@
 # Wineries for Laravel 5
 
+[![Total Downloads](https://poser.pugx.org/syscover/wineries/downloads)](https://packagist.org/packages/syscover/wineries)
+
 ## Installation
 
 **1 - After install Laravel framework, insert on file composer.json, inside require object this value**
 ```
-"syscover/wineries": "dev-master"
+"syscover/wineries": "~1.0"
 ```
 and execute on console:
 ```
-composer update
+composer install
 ```
 
 **2 - Register service provider, on file config/app.php add to providers array**
