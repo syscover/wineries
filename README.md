@@ -1,4 +1,4 @@
-# Wineries for Laravel 5.2
+# Wineries for Laravel 5.3
 
 [![Total Downloads](https://poser.pugx.org/syscover/wineries/downloads)](https://packagist.org/packages/syscover/wineries)
 
@@ -6,7 +6,7 @@
 
 **1 - After install Laravel framework, insert on file composer.json, inside require object this value**
 ```
-"syscover/wineries": "~1.0"
+"syscover/wineries": "~2.0"
 ```
 and execute on console:
 ```
