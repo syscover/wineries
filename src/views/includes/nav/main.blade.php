@@ -1,4 +1,4 @@
-<li{!! is_current_resource(['wineries-winery']) !!}>
+<li{!! is_current_resource(['wineries']) !!}>
     <a href="javascript:void(0)"><i class="fa fa-glass"></i>{{ trans('wineries::pulsar.package_name') }}</a>
     <ul class="sub-menu">
         @if(is_allowed('wineries-winery', 'access'))
