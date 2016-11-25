@@ -20,7 +20,7 @@ class WineriesCreateTableWinery extends Migration {
                 $table->increments('id_190')->unsigned();
 
                 // custom
-                $table->integer('custom_field_group_190')->unsigned()->nullable();
+                $table->integer('field_group_id_190')->unsigned()->nullable();
 
                 // hotel related
                 $table->integer('hotel_id_190')->unsigned()->nullable();
@@ -72,7 +72,7 @@ class WineriesCreateTableWinery extends Migration {
                     ->on('001_005_territorial_area_3')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('custom_field_group_190', 'fk05_015_190_winery')
+                $table->foreign('field_group_id_190', 'fk05_015_190_winery')
                     ->references('id_025')
                     ->on('001_025_field_group')
                     ->onDelete('restrict')

@@ -80,7 +80,7 @@ class WineryController extends Controller
         {
             // create new winery
             $winery = Winery::create([
-                'custom_field_group_190'                        => $this->request->has('customFieldGroup')? $this->request->input('customFieldGroup') : null,
+                'field_group_id_190'                        => $this->request->has('customFieldGroup')? $this->request->input('customFieldGroup') : null,
                 'hotel_id_190'                                  => $this->request->has('hotel')? $this->request->input('hotel') : null,
                 'name_190'                                      => $this->request->input('name'),
                 'slug_190'                                      => $this->request->input('slug'),
@@ -161,7 +161,7 @@ class WineryController extends Controller
     public function updateCustomRecord($parameters)
     {
         $winery = [
-            'custom_field_group_190'                        => $this->request->has('customFieldGroup')? $this->request->input('customFieldGroup') : null,
+            'field_group_id_190'                            => $this->request->has('customFieldGroup')? $this->request->input('customFieldGroup') : null,
             'hotel_id_190'                                  => $this->request->has('hotel')? $this->request->input('hotel') : null,
             'name_190'                                      => $this->request->input('name'),
             'slug_190'                                      => $this->request->input('slug'),
