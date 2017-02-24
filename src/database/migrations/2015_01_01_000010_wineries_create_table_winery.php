@@ -49,6 +49,12 @@ class WineriesCreateTableWinery extends Migration {
                 $table->string('address_190')->nullable();
                 $table->string('latitude_190')->nullable();
                 $table->string('longitude_190')->nullable();
+
+                // booking data
+                $table->string('booking_data_190')->nullable();
+                $table->string('booking_email_190')->nullable();
+
+                // data
                 $table->string('data_lang_190')->nullable();
                 $table->text('data_190')->nullable();
                 

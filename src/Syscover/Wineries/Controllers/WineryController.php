@@ -101,6 +101,8 @@ class WineryController extends Controller
                 'address_190'                                   => $this->request->input('address'),
                 'latitude_190'                                  => str_replace(',', '', $this->request->input('latitude')),   // replace ',' character, can contain this character that damage script
                 'longitude_190'                                 => str_replace(',', '', $this->request->input('longitude')),  // replace ',' character, can contain this character that damage script
+                'booking_data_190'                              => $this->request->input('bookingData'),
+                'booking_email_190'                             => $this->request->input('bookingEmail'),
             ]);
 
             $id     = $winery->id_190;
@@ -182,6 +184,8 @@ class WineryController extends Controller
             'address_190'                                   => $this->request->input('address'),
             'latitude_190'                                  => str_replace(',', '', $this->request->input('latitude')),   // replace ',' character, can contain this character that damage script
             'longitude_190'                                 => str_replace(',', '', $this->request->input('longitude')),  // replace ',' character, can contain this character that damage script)
+            'booking_data_190'                              => $this->request->input('bookingData'),
+            'booking_email_190'                             => $this->request->input('bookingEmail'),
         ];
 
         if($parameters['specialRules']['emailRule'])  $hotel['email_190']       = $this->request->input('email');
