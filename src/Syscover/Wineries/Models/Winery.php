@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
  * Class Winery
  *
  * Model with properties
- * <br><b>[id, custom_field_group, hotel_id, name, slug, web, web_url, contact, email, phone, mobile, fax, active, country_id, territorial_area_1_id, territorial_area_2_id, territorial_area_3_id, cp, locality, address, latitude, longitude, data_lang, data]</b>
+ * <br><b>[id, custom_field_group, hotel_id, name, slug, web, web_url, contact, email, phone, mobile, fax, active, country_id, territorial_area_1_id, territorial_area_2_id, territorial_area_3_id, cp, locality, address, latitude, longitude, booking_data, booking_email, data_lang, data]</b>
  *
  * @package     Syscover\Wineries\Models
  */
@@ -22,7 +22,7 @@ class Winery extends Model
     protected $primaryKey   = 'id_190';
     protected $suffix       = '190';
     public $timestamps      = false;
-    protected $fillable     = ['id_190', 'field_group_id_190', 'hotel_id_190', 'name_190', 'slug_190', 'web_190', 'web_url_190', 'contact_190', 'email_190', 'phone_190', 'mobile_190', 'fax_190', 'active_190', 'country_id_190', 'territorial_area_1_id_190', 'territorial_area_2_id_190', 'territorial_area_3_id_190', 'cp_190', 'locality_190', 'address_190', 'latitude_190', 'longitude_190', 'data_lang_190', 'data_190'];
+    protected $fillable     = ['id_190', 'field_group_id_190', 'hotel_id_190', 'name_190', 'slug_190', 'web_190', 'web_url_190', 'contact_190', 'email_190', 'phone_190', 'mobile_190', 'fax_190', 'active_190', 'country_id_190', 'territorial_area_1_id_190', 'territorial_area_2_id_190', 'territorial_area_3_id_190', 'cp_190', 'locality_190', 'address_190', 'latitude_190', 'longitude_190', 'booking_data_190', 'booking_email_190', 'data_lang_190', 'data_190'];
     protected $maps         = [];
     protected $relationMaps = [
         'hotel'         => \Syscover\Hotels\Models\Hotel::class, // if this winery belonging to a hotel
