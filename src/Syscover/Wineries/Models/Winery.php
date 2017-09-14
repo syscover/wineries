@@ -32,7 +32,7 @@ class Winery extends Model
     ];
     private static $rules   = [
         'name'      => 'required|between:2,100',
-        'email'     => 'required|between:2,50|email|unique:015_190_winery,email_190',
+        'email'     => 'required|between:2,50|email|mysql2.unique:015_190_winery,email_190',
     ];
 
     public static function validate($data, $specialRules = [])
