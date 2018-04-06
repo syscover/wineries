@@ -76,11 +76,11 @@ class WineryController extends Controller
 
     public function storeCustomRecord($parameters)
     {
-        if(!$this->request->has('id'))
+        if(! $this->request->input('id'))
         {
             // create new winery
             $winery = Winery::create([
-                'field_group_id_190'                        => $this->request->has('customFieldGroup')? $this->request->input('customFieldGroup') : null,
+                'field_group_id_190'                            => $this->request->has('customFieldGroup')? $this->request->input('customFieldGroup') : null,
                 'hotel_id_190'                                  => $this->request->has('hotel')? $this->request->input('hotel') : null,
                 'name_190'                                      => $this->request->input('name'),
                 'slug_190'                                      => $this->request->input('slug'),
